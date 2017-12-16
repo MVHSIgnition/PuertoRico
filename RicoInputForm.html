@@ -1,7 +1,8 @@
+
 <html>
 	<body>
 	<! Form which intakes username, password, and family relatives>
-	<form action="welcome.php" method="post">
+	<form action="userinfo.php" method="post">
 		<p class="input">Username: <input type="text" name="username"><br></p>
 		<p class="helpText">Usernames must be 6 to 16 characters long and consist of only letters and numbers.<br></p>
 		<p class="input">Password: <input type="password" name="password"><br></p>
@@ -10,9 +11,21 @@
 		<p class="helpText">Only include family members that are close to your location. Limit 10.<br></p>
 		<input type="submit" value="Continue >>">
 	</form>
-
+	<button onclick="getLocation()">Try It</button>
+	<p id="demo"></p>
 	</body>
-	<script src="rico.js">
-	
+	<script>
+		var x = document.getElementById("demo");
+		function getLocation() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(showPosition);
+		    } else {
+		        x.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}
+		function showPosition(position) {
+		    x.innerHTML = "Latitude: " + position.coords.latitude +
+		    "<br>Longitude: " + position.coords.longitude;
+		}
 	</script>
 </html>
