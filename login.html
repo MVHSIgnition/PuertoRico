@@ -9,7 +9,7 @@
 			<input class="inputBox" id="loginEmail" type="email" placeholder="Email"><br>
 			<input class="inputBox" id="loginPassword" type="password" placeholder="Password"><br>
 			<button class="mainButton" id="login">Login</button><br>
-			<a href="prephome.html" id="loginBack"><button class="alternateButton">Back</button></a>
+			<a href="index.html" id="loginBack"><button class="alternateButton">Back</button></a>
 			<a href="register.html"><button class="alternateButton">Register</button></a>
 		</center>
 
@@ -29,10 +29,6 @@
 		</script>
 		
 		<script>
-			var d = new Date();
-			var prepping = true;
-			if(d.getTime()>=hurricanedate)prepping=false;
-			if(!prepping) document.getElementById("loginBack").href="responsehome";
 			var loginButton = document.getElementById("login");
 			var lEmail = document.getElementById("loginEmail");
 			var lPassword = document.getElementById("loginPassword");
@@ -45,10 +41,7 @@
 				});
 			}
 			firebase.auth().onAuthStateChanged(function(user) {
-				if (user){
-					if(prepping) window.location.replace("preptips.html");
-					else window.location.replace("responsetips.html");
-				}
+				if (user) window.location.replace("tips.html");
 			});	
 		</script>
 	</body>
