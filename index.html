@@ -1,11 +1,14 @@
 <html>
 	<head><title>Redirecting...</title></head>
-	<script src = "information.js"></src>
+	<body></body>
+	<script src = "information.js"></script>
 	<script>
+		console.log("hello");
 		var d = new Date();
 		var prepping = true;
 		if(d.getTime()>=hurricanedate)prepping=false;
-		if(prepping) window.location.replace("prephome.html");
-		else window.location.replace("responsehome.html");
+		console.log(prepping);
+		if(prepping) window.location.href = "prephome.html";
+		else window.location.href = "responsehome.html";
 	</script>
 </html>
