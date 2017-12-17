@@ -32,7 +32,7 @@
 			var d = new Date();
 			var prepping = true;
 			if(d.getTime()>=hurricanedate)prepping=false;
-			if(!prepping) document.getElementById("registerBack").href="responsetips";
+			if(!prepping) document.getElementById("registerBack").href="responsehome";
 			var registerButton = document.getElementById("register");
 			var rEmail = document.getElementById("registerEmail");
 			var rPassword = document.getElementById("registerPassword");
@@ -46,7 +46,6 @@
 			}
 			firebase.auth().onAuthStateChanged(function(user){
 				if (user) {
-					console.log(user);
 					if(prepping) window.location.replace("preptips.html");
 					else window.location.replace("responsetips.html");
 				}
