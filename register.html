@@ -54,19 +54,24 @@
 					alert(errorMessage);
 					// TODO: ADD ERROR PROCESSING
 				});
-
-				//store responses
-				var ref = firebase.database().ref();
-				var famNum = document.getElementById("familyNum").value;
-				var youngChild = document.getElementById("youngChildYes").checked;
-				var pets = document.getElementById("petsYes").checked;
-				ref.push({user: rEmail.value, famNum: famNum, youngChild: youngChild, pets: pets});
 			}
 
 			firebase.auth().onAuthStateChanged(function(user){
 				if (user) {
-					if(prepping) window.location.replace("preptips.html");
-					else window.location.replace("responsetips.html");
+					console.log(user.uid);
+					//store responses
+					var ref = firebase.database().ref();
+					var famNum = document.getElementById("familyNum").value;
+					var youngChild = document.getElementById("youngChildYes").checked;
+					var pets = document.getElementById("petsYes").checked;
+					firebase.database().ref("users/" + user.uid).set({
+						famNum: famNum,
+						youngChild: youngChild,
+						pets: pets
+					}).then(function() {
+						if(prepping) window.location.replace("preptips.html");
+						else window.location.replace("responsetips.html");
+					});
 				}
 			});
 		</script>
