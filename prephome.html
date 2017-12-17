@@ -2,23 +2,42 @@
 	<head>
 		<title>Puerto Rico Hurricane</title>
 		<link rel="stylesheet" href="main.css">
+		<style>
+			div {
+  			background-color: #ff5242;
+  			background-color: rgba(255, 82, 66);
+			}
+			.text {
+    		text-align: center;
+    		border: 3px solid black;
+				align-items: center;
+			}
+
+			#title{
+				background-color: #ff5242;
+  			background-color: rgba(255, 82, 66);
+				border: 3px solid black;
+
+			}
+
+		</style>
 	</head>
 	<body>
 		<div class="nav">
 			<ul>
-				<a href = "register.html"><li>Register</li></a>
+				<a href = "register.html"><li class = "center">Register</li></a>
 				<a href = "login.html"><li>Sign in</li></a>
 				<a href = "#" id = "logo"><li>IGNIT<span id="grayLogo">ION</span></li></a>
 			</ul>
 		</div>
-		<center><h1>Welcome to Ignition!</h1><center>
-		<div>
-			<center><p>Thanks for visiting! This app can help you prepare and respond to the upcoming hurricane.</p></center>
-			<p>This website can help you with:
+		<center><h1 id = "title">Welcome to Ignition!</h1><center>
+		<div class = "text">
+			<center><p><strong>Thanks for visiting! This app can help you prepare and respond to the upcoming hurricane.</strong></p></center>
+			<p><strong>This website can help you with:
 				<li>Personalized tips on how to stay safe and get resources</li>
 				<li>A map to guide you to hurricane relief hotspots</li>
 				<li>A search engine built for radio transcripts that gets you the latest updates</li></p>
-			<center><p>Sign in or create an account to get started!</p></center>
+			<center><p>Sign in or create an account to get started!</strong></p></center>
 		</div>
 	</body>
 </html>
