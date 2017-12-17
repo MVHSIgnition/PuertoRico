@@ -1,3 +1,4 @@
+/*NAV BAR*/
 div.nav{
 	width: 100%;
 	background-color: rgba(0,0,0,0);
@@ -22,4 +23,41 @@ div.nav ul a{
 #grayLogo{
 	color: #333;
 }
+/*RADIO SEARCH*/
+#searchBar{
+	text-align: center;
+	display:inline-block;
+	border: solid;
+	border-color: #00ccff;
+}
+#searchBar #q, #qBtn {
+	height: 2em;
+	float: left;
+	border-style: none;
+	border-color: #333;
+	font-size: 2em;
+}
 
+#searchBar #q {
+	border-top-left-radius: .5em;
+	border-bottom-left-radius: .5em;
+	border-right: 0;
+	text-indent: .5em;
+}
+
+#searchBar #qBtn {
+	background-color: #90C3D4;
+	border-top-right-radius: .5em;
+	border-bottom-right-radius: .5em;
+}
+
+#searchBar #qBtn:hover, #qBtn:focus {
+	background-color: #67A3B8;
+	border-top-right-radius: .5em;
+	border-bottom-right-radius: .5em;
+}
+
+#searchBar #qBtn img {
+	max-width: 80%;
+	max-height: 80%;
+}
