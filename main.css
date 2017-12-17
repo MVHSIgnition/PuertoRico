@@ -1,3 +1,4 @@
+
 body {
   background: linear-gradient(225deg, #00f6ff, #6b6b6b);
   background-size: 400% 400%;
@@ -80,3 +81,29 @@ li a {
    width: 100%;
   }
 }
+
+div.nav{
+	width: 100%;
+	background-color: rgba(0,0,0,0);
+	height: 2.5em;
+	padding: 0;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+div.nav ul{
+	list-style: none;
+}
+div.nav ul a{
+	display: inline-block;
+	float: right;
+	padding: 0.25em 0.5em;
+	text-decoration: none;
+	font-size: 1.5em;
+	color: #CC3333;
+}
+#logo{
+	float: left;
+}
+#grayLogo{
+	color: #333;
+}
+
