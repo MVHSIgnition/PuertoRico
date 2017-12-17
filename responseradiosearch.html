@@ -1,3 +1,36 @@
-Title: Response Radio Search Page
-Content: Radio Search
-Links: Response Navbar
+<html>
+	<head>
+		<title>Search Radio Broadcasts</title>
+		<link rel="stylesheet" href="main.css">
+	</head>
+
+	<body>
+		<center>
+			<div class = "center">
+				<div class="input-wrapper">
+					<input id="q" placeholder="Ignite!"/>
+					<button id="qBtn"><img src="img/search.png"/></button>
+				</div>
+			</div>
+		</center>
+
+		<ul id="searchResults"></ul>
+		<script>
+			$(function(){
+				var socket = io("https://puertoricoserver.herokuapp.com/");
+
+				$("#qBtn").click(function() {
+					socket.emit("info request", $("#q").val());
+				});
+
+				socket.on("info response", function(response) {
+					$("#searchResults").html("<h1> Results for " + response[0] + "</h1>");
+
+					for(var i = 1; i < response.length; i++){
+						$("#searchResults").append("<li style=\"margin-left:5-em\">" + i + ": " + response[i] + "</li>");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
