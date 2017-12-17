@@ -48,17 +48,17 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-selection {
   color: #fff;
-  background: #1fb5f6;
+  background: #9C2A00;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #1fb5f6;
+  background: #9C2A00;
 }
 
 ::selection {
   color: #fff;
-  background: #1fb5f6;
+  background: #9C2A00;
 }
 
 #fh5co-header {
@@ -159,7 +159,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 30px;
 }
 #fh5co-header #navbar li.call-to-action a:hover {
-  background-color: #76c9d4;
+  background-color: #cc3333;
   color: #fff;
 }
 #fh5co-header #navbar li.call-to-action a span:before {
@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 3px;
 }
 #fh5co-header .navbar-brand > span {
-  color: #76c9d4;
+  color: #cc3333;
 }
 @media screen and (max-width: 992px) {
   #fh5co-header .navbar-brand {
@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   left: 0;
   top: 0;
-  color: #1fb5f6;
+  color: #9C2A00;
 }
 .mt > div {
   margin-bottom: 40px;
@@ -427,7 +427,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   top: 0;
   font-size: 18px;
-  color: #1fb5f6;
+  color: #9C2A00;
 }
 
 #fh5co-testimony .wrap-testimony {
@@ -444,7 +444,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 #fh5co-testimony .wrap-testimony .testimony-slide span a.twitter {
-  color: #1fb5f6;
+  color: #9C2A00;
   font-weight: 300;
 }
 #fh5co-testimony .wrap-testimony .testimony-slide figure {
@@ -486,7 +486,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 50px;
   height: 2px;
-  background: #1fb5f6;
+  background: #9C2A00;
   left: 50%;
   margin-left: -25px;
   bottom: 0;
@@ -509,7 +509,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .getting-started {
-  background: #1fb5f6;
+  background: #9C2A00;
   padding: 60px 0 40px 0;
 }
 .getting-started h3 {
@@ -588,7 +588,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .fh5co-pricing .price-box .btn-select-plan {
   padding: 10px 20px;
-  background: #1fb5f6;
+  background: #9C2A00;
   color: #fff;
   -webkit-box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 3px 6px -1px rgba(0, 0, 0, 0.15);
@@ -761,7 +761,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 50px;
   height: 2px;
-  background: #1fb5f6;
+  background: #9C2A00;
   left: 50%;
   margin-left: -25px;
   bottom: 0;
@@ -798,7 +798,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 35px;
   height: 2px;
-  background: #1fb5f6;
+  background: #9C2A00;
 }
 #fh5co-footer .copy-right {
   position: relative;
@@ -816,7 +816,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 35px;
   height: 2px;
-  background: #1fb5f6;
+  background: #9C2A00;
 }
 #fh5co-footer .contact-info {
   margin: 0 0 60px 0;
@@ -834,7 +834,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   font-size: 22px;
-  color: #1fb5f6;
+  color: #9C2A00;
 }
 #fh5co-footer .social-media {
   margin: 0 0 30px 0;
@@ -848,7 +848,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 10px;
 }
 #fh5co-footer .social-media li a {
-  color: #1fb5f6;
+  color: #9C2A00;
 }
 #fh5co-footer .social-media li a:hover, #fh5co-footer .social-media li a:focus, #fh5co-footer .social-media li a:active {
   text-decoration: none;
