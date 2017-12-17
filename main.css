@@ -32,7 +32,7 @@ h1 {
   font-family: impact;
   font-size: 50px;
   text-align: center;
-  color: rgb(76, 149, 195);
+  color: black;
 }
 
 .info {
@@ -63,17 +63,12 @@ li {
 }
 
 li a {
-    display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
-}
 
 .active {
     background-color: #4CAF50;
