@@ -20,7 +20,7 @@
 				  <input type="radio" name="gender" value="female"> No<br>
 			</form>
 			<button class="mainButton" id="register">Register</button><br>
-			<a href="prephome.html" id="registerBack"><button class="alternateButton">Back</button></a>
+			<a href="index.html" id="registerBack"><button class="alternateButton">Back</button></a>
 			<a href="login.html"><button class="alternateButton">Login</button></a>
 		</center>
 
@@ -38,17 +38,12 @@
 			};
 			firebase.initializeApp(config);
 		</script>
-
+		
 		<script>
-			var d = new Date();
-			var prepping = true;
-			if(d.getTime()>=hurricanedate)prepping=false;
-			if(!prepping) document.getElementById("registerBack").href="responsehome";
 			var registerButton = document.getElementById("register");
 			var rEmail = document.getElementById("registerEmail");
 			var rPassword = document.getElementById("registerPassword");
-			registerButton.onclick = function(){
-				firebase.auth().createUserWithEmailAndPassword(rEmail.value, rPassword.value).catch(function(error) {
+			registerButton.onclick = function(){firebase.auth().createUserWithEmailAndPassword(rEmail.value, rPassword.value).catch(function(error) {
 					var errorCode = error.code;
 					var errorMessage = error.message;
 					alert(errorMessage);
@@ -58,8 +53,6 @@
 
 			firebase.auth().onAuthStateChanged(function(user){
 				if (user) {
-					console.log(user.uid);
-					//store responses
 					var ref = firebase.database().ref();
 					var famNum = document.getElementById("familyNum").value;
 					var youngChild = document.getElementById("youngChildYes").checked;
@@ -69,8 +62,7 @@
 						youngChild: youngChild,
 						pets: pets
 					}).then(function() {
-						if(prepping) window.location.replace("preptips.html");
-						else window.location.replace("responsetips.html");
+						window.location.replace("tips.html");
 					});
 				}
 			});
