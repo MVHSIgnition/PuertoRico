@@ -13,11 +13,13 @@
     <br>
     <button id="login">Login</button>
     <br>
-    <a href="index.html"><button>Back</button></a>
+	<a href="register.html"><button id="register">Register</button><a>
+	<br>
+    <button id = "back">Back</button>
   </center>
 
   <!--Initialize Firebase-->
-
+  <script src = "information.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -34,6 +36,18 @@
 
   <!--Switch to JavaScript-->
   <script>
+  var backButton = document.getElementById("back");
+  backButton.onclick = function() {
+  
+	var d = new Date();
+	console.log(d.getTime() - hurricanedate);
+	if(hurricanedate <= d.getTime()){
+	window.location.replace("responsehome.html");
+	}
+	else if(hurricanedate > d.getTime()){
+	window.location.replace("prephome.html");
+	}
+	};
     //Make Variables
     var loginButton = document.getElementById("login");
     var lEmail = document.getElementById("loginEmail");
@@ -41,7 +55,6 @@
 
 
     //Signs out
-    var signOut = document.getElementById("signOutButton");
 
     loginButton.onclick = function() {
       firebase.auth().signInWithEmailAndPassword(lEmail.value, lPassword.value).catch(function(error) {
@@ -60,20 +73,18 @@
         var s = document.querySelector('h1');
         s.innerHTML = "Logged In " + user.email;
         console.log(user);
-        window.location.replace("index.html");
+        var d = new Date();
+	console.log(d.getTime() - hurricanedate);
+	if(hurricanedate <= d.getTime()){
+	window.location.replace("responsehome.html");
+	}
+	else if(hurricanedate > d.getTime()){
+	window.location.replace("prephome.html");
+	}
       }
     });
 
-    signOut.onclick = function() {
-      firebase.auth().signOut().then(function() {
-        var s = document.querySelector('h1');
-        s.innerHTML = "Sign Out Successful";
-        location.reload(); //refresh
-      }).catch(function(error) {
-        var s = document.querySelector('h1');
-        s.innerHTML = "Sign Out Not Successful";
-      });
-    }
+ 
 
   </script>
 </body>
