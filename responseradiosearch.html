@@ -5,9 +5,11 @@
 	</head>
 
 	<body>
+		<h1>Search Radio Broadcasts</h1>
+		<p>Search radio transcripts of emergency broadcasts to get more information on how to best respond to the hurricane by entering a few key terms in the search bar below:</p>
 		<center>
 			<div class = "center">
-				<div class="input-wrapper">
+				<div id="searchBar">
 					<input id="q" placeholder="Ignite!"/>
 					<button id="qBtn"><img src="img/search.png"/></button>
 				</div>
@@ -15,6 +17,9 @@
 		</center>
 
 		<ul id="searchResults"></ul>
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/socket.io.js"></script>
 		<script>
 			$(function(){
 				var socket = io("https://puertoricoserver.herokuapp.com/");

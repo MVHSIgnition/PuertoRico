@@ -82,10 +82,11 @@ li a {
 }
 div.nav{
 	width: 100%;
-	background-color: rgba(0,0,0,0);
+	background-color: #FFF;
 	height: 2.5em;
 	padding: 0;
 	font-family: "Arial Black", Gadget, sans-serif;
+	width: 100%;
 }
 div.nav ul{
 	list-style: none;
@@ -93,9 +94,10 @@ div.nav ul{
 div.nav ul a{
 	display: inline-block;
 	float: right;
-	padding: 0.25em 0.5em;
+	padding-top: 0.4em;
+	margin-right: 1em;
 	text-decoration: none;
-	font-size: 1.5em;
+	font-size: 15.5;
 	color: #CC3333;
 }
 #logo{
@@ -103,4 +105,10 @@ div.nav ul a{
 }
 #grayLogo{
 	color: #333;
+}
+body{
+	background-color: #FF3F0044;
+}
+#content{
+	padding: 0.3em;
 }
