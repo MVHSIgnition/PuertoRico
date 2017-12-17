@@ -1,6 +1,36 @@
+body {
+  background-color: rgb(236, 232, 232);
+}
+
 #map {
  height: 700px;
  width: 100%;
+}
+
+h1 {
+  font-family: impact;
+  font-size: 50px;
+  text-align: center;
+  color: rgb(76, 149, 195);
+}
+
+.info {
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204);
+  font-family: fantasy;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+p {
+  padding-left: 10px;
+  font-size: 25px;
+  padding-top: 8px;
+}
+
+li {
+  padding-right: 10px;
 }
 
 @media only screen and (max-width: 1200px) {
