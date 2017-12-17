@@ -1,0 +1,1 @@
+var hurricanedate = 1512012947000;//date of hurricane in milliseconds(Unix Time in milliseconds)
