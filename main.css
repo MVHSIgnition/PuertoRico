@@ -1,6 +1,6 @@
 /*GENERAL*/
 body{
-	background-color: #FF3F0044;
+	background-color: #fff;
 }
 #content{
 	padding: 0.3em;
@@ -41,7 +41,7 @@ div.nav ul a{
 #searchBar #q, #qBtn {
 	height: 2em;
 	float: left;
-	border-style: none;
+	border-style: solid;
 	border-color: #333;
 	font-size: 2em;
 }
@@ -68,4 +68,22 @@ div.nav ul a{
 #searchBar #qBtn img {
 	max-width: 80%;
 	max-height: 80%;
+}
+
+#searchResults li{
+	padding: 1em 1em;	
+}
+
+#searchResults li:nth-child(odd) {
+	background: #eee;
+}
+
+#searchResults li:nth-child(even) {
+	background: #fff;
+}
+
+#searchResults {
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0;
 }
