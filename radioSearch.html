@@ -41,6 +41,20 @@
 				background-color: #DDD;
 			}
 			
+			#searchResults {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#searchResults li:nth-child(odd) {
+				background: #eee;
+			}
+			
+			#searchResults li:nth-child(even) {
+				background: #fff;
+			}
+			
 		</style>
 	</head>
 	
@@ -49,5 +63,30 @@
 			<input id="q" placeholder="Ignite!"/>
 			<button id="qBtn"><img src="img/search.png"/></button>
 		</div>
+		
+		<ul id="searchResults">
+			<li>lol</li>
+			<li>what</li>
+		</ul>
+		
+		<script src="js/socket.io.js"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(function(){
+				var socket = io("http://puertoricoserver.herokuapp.com/");
+			
+				$("#qBtn").click(function() {
+					socket.emit("info request", $("#s").val());
+				});
+				
+				socket.on("info response", function(response) {
+					$("#searchResults").html("<h1> Results for " + response[0] + "</h1>");
+					
+					for(var i = 1; i < response.length; i++){
+						$("#searchResults").append("<li style=\"margin-left:5-em\">" + i + ": " + response[i] + "</li>");
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
