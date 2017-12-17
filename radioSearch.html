@@ -133,7 +133,7 @@
 
 		<script>
 			$(function(){
-				var socket = io("http://puertoricoserver.herokuapp.com/");
+				var socket = io("https://puertoricoserver.herokuapp.com/");
 
 				$("#qBtn").click(function() {
 					socket.emit("info request", $("#s").val());
