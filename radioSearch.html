@@ -136,7 +136,7 @@
 				var socket = io("https://puertoricoserver.herokuapp.com/");
 
 				$("#qBtn").click(function() {
-					socket.emit("info request", $("#s").val());
+					socket.emit("info request", $("#q").val());
 				});
 
 				socket.on("info response", function(response) {
