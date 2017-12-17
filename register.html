@@ -9,21 +9,21 @@
 			<input class="inputBox" id="registerEmail" type="email" placeholder="Email"><br>
 			<input class="inputBox" id="registerPassword" type="password" placeholder="Password"><br>
 			<input class="inputBox" id="familyNum" type="number" placeholder="Number of Family Members"><br>
-			<form>
+			<form id="youngChild">
 				  Do you have a child under 12 years old?<br>
-				  <input type="radio" name="gender" value="male" checked> Yes<br>
-				  <input type="radio" name="gender" value="female"> No<br>								
+				  <input type="radio" id="youngChildYes" name="gender" value="male" checked> Yes<br>
+				  <input type="radio" name="gender" value="female"> No<br>
 			</form>
-			<form>
+			<form id="pets">
 				  Do you have any Pets in your home?<br>
-				  <input type="radio" name="gender" value="male" checked> Yes<br>
-				  <input type="radio" name="gender" value="female"> No<br>								
+				  <input type="radio" id="petsYes" name="gender" value="male" checked> Yes<br>
+				  <input type="radio" name="gender" value="female"> No<br>
 			</form>
 			<button class="mainButton" id="register">Register</button><br>
 			<a href="prephome.html" id="registerBack"><button class="alternateButton">Back</button></a>
 			<a href="login.html"><button class="alternateButton">Login</button></a>
 		</center>
-		
+
 		<!--Firebase Registration Handling-->
 		<script src = "information.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
@@ -38,7 +38,7 @@
 			};
 			firebase.initializeApp(config);
 		</script>
-		
+
 		<script>
 			var d = new Date();
 			var prepping = true;
@@ -55,6 +55,14 @@
 					// TODO: ADD ERROR PROCESSING
 				});
 			}
+
+			//store responses
+			var db = new Firebase("https://puerto-rico-82a67.firebaseio.com/");
+			var famNum = document.getElementById("familyNum").value;
+			var youngChild = document.getElementById("youngChildYes").checked;
+			var pets = document.getElementById("petsYes").checked;
+			db.push({user: rEmail.value, famNum: famNum, youngChild: youngChild, pets: pets})
+
 			firebase.auth().onAuthStateChanged(function(user){
 				if (user) {
 					if(prepping) window.location.replace("preptips.html");
