@@ -1,3 +1,253 @@
-Title: Profile Page
-Content: Profile Info/Option to Update Profile
-Links: Prep/Response Navbar
+
+
+<html>
+	<head>
+		<title>My Profile</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<style>
+		  /* Always set the map height explicitly to define the size of the div
+		   * element that contains the map. */
+		  .map {
+			height: 30%;
+			width: 50%;
+			text-align: center;
+			margin: 0 auto;
+		  }
+		  /* Optional: Makes the sample page fill the window. */
+		  html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			text-align: center;	
+		  }
+		</style>
+	</head>
+	
+	<body>
+		<h1>My Profile</h1>
+		<h2>Do you have...</h2>
+		<form>
+			Water?<br>
+			<input type="radio" id="waterYes" name="gender" value="male" checked> Yes<br>
+			<input type="radio" id="waterNo" name="gender" value="female">No<br>
+		</form>
+		<p id="waterText"></p>
+		<div class="map" id="map1"></div>
+		
+		<form>
+			Food?<br>
+			<input type="radio" id="foodYes" name="gender" value="male" checked> Yes<br>
+			<input type="radio" id="foodNo"name="gender" value="female">No<br>
+		</form>
+		<p id="foodText"></p>
+		<div class="map" id="map2"></div>
+		
+		<form>
+			Shelter?<br>
+			<input type="radio" id="shelterYes" name="gender" value="male" checked> Yes<br>
+			<input type="radio" id="shelterNo" name="gender" value="female">No<br>
+		</form>
+		<p id="shelterText"></p>
+		<div class="map" id="map3"></div>
+		
+		<form>
+			Wifi?<br>
+			<input type="radio" id="wifiYes" name="gender" value="male" checked> Yes<br>
+			<input type="radio" id="wifiNo" name="gender" value="female">No<br>
+		</form>
+		<p id="wifiText" style="padding-left: 1em;"></p>
+		<div class="map" id="map4"></div>
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAclhFTo3TH7DKzYboQW0-jEZKLak1QQIw&libraries=places&callback=initMap" async defer></script>
+		<script>
+			function initMap() {
+				var pyrmont = {lat: 18.200178, lng: -66.664513};
+				
+				map1 = new google.maps.Map(document.getElementById('map1'), {
+				  center: pyrmont,
+				  zoom: 8
+				});
+				
+				infowindow = new google.maps.InfoWindow();
+				var service1 = new google.maps.places.PlacesService(map1);
+				service1.nearbySearch({
+				  location: pyrmont,
+				  radius: 50000,
+				  type: ['shelter']
+				}, callback1);
+				
+				map2 = new google.maps.Map(document.getElementById('map2'), {
+				  center: pyrmont,
+				  zoom: 8
+				});
+				
+				infowindow = new google.maps.InfoWindow();
+				var service2 = new google.maps.places.PlacesService(map2);
+				service2.nearbySearch({
+				  location: pyrmont,
+				  radius: 50000,
+				  type: ['shelter']
+				}, callback2);
+				
+				map3 = new google.maps.Map(document.getElementById('map3'), {
+				  center: pyrmont,
+				  zoom: 8
+				});
+				
+				infowindow = new google.maps.InfoWindow();
+				var service3 = new google.maps.places.PlacesService(map3);
+				service3.nearbySearch({
+				  location: pyrmont,
+				  radius: 50000,
+				  type: ['shelter']
+				}, callback3);
+				
+				map4 = new google.maps.Map(document.getElementById('map4'), {
+				  center: pyrmont,
+				  zoom: 8
+				});
+				
+				infowindow = new google.maps.InfoWindow();
+				var service4 = new google.maps.places.PlacesService(map4);
+				service4.nearbySearch({
+				  location: pyrmont,
+				  radius: 50000,
+				  type: ['wifi']
+				}, callback4);
+			}
+			
+			function callback1(results, status) {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+				  for (var i = 0; i < results.length; i++) {
+					createMarker1(results[i]);
+				  }
+				}
+			  }
+			  
+			  function callback2(results, status) {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+				  for (var i = 0; i < results.length; i++) {
+					createMarker2(results[i]);
+				  }
+				}
+			  }
+			  
+			  function callback3(results, status) {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+				  for (var i = 0; i < results.length; i++) {
+					createMarker3(results[i]);
+				  }
+				}
+			  }
+			  
+			  function callback4(results, status) {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+				  for (var i = 0; i < results.length; i++) {
+					createMarker4(results[i]);
+				  }
+				}
+			  }
+			  
+			function createMarker1(place) {
+				var placeLoc = place.geometry.location;
+				var marker = new google.maps.Marker({
+				  map: map1,
+				  position: place.geometry.location
+				});
+
+				google.maps.event.addListener(marker, 'click', function() {
+				  infowindow.setContent(place.name);
+				  infowindow.open(map1, this);
+				});
+			  }
+			  
+			  function createMarker2(place) {
+				var placeLoc = place.geometry.location;
+				var marker = new google.maps.Marker({
+				  map: map2,
+				  position: place.geometry.location
+				});
+
+				google.maps.event.addListener(marker, 'click', function() {
+				  infowindow.setContent(place.name);
+				  infowindow.open(map2, this);
+				});
+			  }
+			  
+			  function createMarker3(place) {
+				var placeLoc = place.geometry.location;
+				var marker = new google.maps.Marker({
+				  map: map3,
+				  position: place.geometry.location
+				});
+
+				google.maps.event.addListener(marker, 'click', function() {
+				  infowindow.setContent(place.name);
+				  infowindow.open(map3, this);
+				});
+			  }
+			  
+			  function createMarker4(place) {
+				var placeLoc = place.geometry.location;
+				var marker = new google.maps.Marker({
+				  map: map4,
+				  position: place.geometry.location
+				});
+
+				google.maps.event.addListener(marker, 'click', function() {
+				  infowindow.setContent(place.name);
+				  infowindow.open(map4, this);
+				});
+			  }
+		
+			$(function() {
+				/*$("#map1").hide();
+				$("#map2").hide();
+				$("#map3").hide();
+				$("#map4").hide();*/
+			
+				$("#waterYes").click(function() {
+					$("#waterText").html("You can find water here: ");
+					//$("#map1").show();
+				});
+				
+				$("#foodYes").click(function() {
+					$("#foodText").html("You can find food here: ");
+					//$("#map2").show();
+				});
+				
+				$("#shelterYes").click(function() {
+					$("#shelterText").html("You can find shelters here: ");
+					//$("#map3").show();
+				});
+				
+				$("#wifiYes").click(function() {
+					$("#wifiText").html("You can find internet cafes here: ");
+					//$("#map4").show();
+				});
+				
+				$("#waterNo").click(function() {
+					$("#waterText").html("");
+					$("#map1").hide();
+				});
+				
+				$("#foodNo").click(function() {
+					$("#foodText").html("");
+					$("#map2").hide();
+				});
+			
+				$("#shelterNo").click(function() {
+					$("#shelterText").html("");
+					$("#map3").hide();
+				});
+				
+				$("#wifiNo").click(function() {
+					$("#wifiText").html("");
+					$("#map4").hide();
+				});
+			});
+		</script>
+	</body>
+</html>
