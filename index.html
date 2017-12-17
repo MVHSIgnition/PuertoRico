@@ -46,5 +46,29 @@
       <p>
       <em>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDAiGrwP6o-yQK-Ug8vqykJQRgwfF6Zogk",
+        authDomain: "puerto-rico-82a67.firebaseapp.com",
+        databaseURL: "https://puerto-rico-82a67.firebaseio.com",
+        projectId: "puerto-rico-82a67",
+        storageBucket: "",
+        messagingSenderId: "257818225257"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          var text = document.querySelector('h1');
+          text.innerHTML = "Logged In " + user.email;
+          console.log(user);
+        }
+      });
+    </script>
   </body>
 </html>
