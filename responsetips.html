@@ -87,12 +87,32 @@
     </script>
 
     <script>
+	  var famNum;
+	  var pets;
+	  var youngChild;
+	  
+	  
       var signOut = document.getElementById("signOutButton");
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           var text = document.querySelector('h1');
           text.innerHTML = "Logged In " + user.email;
+		  
           console.log(user);
+		  
+		  var id = user.uid;
+			return firebase.database().ref("users/" + id).once("value").then(function(snapshot) {
+				if (snapshot.val()) {
+					famNum = snapshot.val().famNum;
+					pets = snapshot.val().pets;
+					youngChild = snapshot.val().youngChild;
+					
+					console.log(famNum);
+					console.log(pets);
+					console.log(youngChild);
+
+				}
+			});
         }
       });
 
