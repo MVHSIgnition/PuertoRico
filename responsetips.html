@@ -30,36 +30,8 @@
           </ul>
       <p>
     </div>
-	<div class="info">
-      <p>
-        <strong>IF (Child): Save the Children Disaster Checklist for Families:</strong></p>
-		<ul>
-			 <li>Comfort Items: Stuffed animal, doll, pacifier or blanket</li>
-			 <li>Personal Hygiene: Baby wipes, feminine products, diapers, nursing pads</li>
-			 <li>Children's Activities: Books, puzzles, games</li>
-			 <li> Infant Nutrition: Nursing supplies, formula, pre-packaged baby food</li>
-			 <li>Medical Needs: Infant/child fever reducer, rash ointment</li>
-			 <li> Family meet-up: Pick a safe spot to meet if separated such as a local school or library</li>
-			 <li>Out-of-towner: A family contact who would not be affected by a local disaster</li>
-			 <li>ICE: Cell phones should have "ICE" (In Case of Emergency) programmed into their contacts</li>
-			 <li>Text: Text messages can often get through, even when a phone call can't</li>
-			 <li>Contact school or day care: Ensure they know what your child is supposed to do in case of an emergency</li>
-			 <li>Identification: Write down your child's name and your contact information on a notecard and keep it with your child </li>
-		</ul>
-		<h3>IfHurricane??? 10 Tips to Help Kids Cope with Disasters</h3>
-		<ul>
-			 <li>Limit TV time : Intense media coverage of disasters can frighten young children and disturb teenagers.</li>
-			 <li> Listen : Find out your child&#8217;s concerns about the situation. Children often cannot give meaning to a dangerous situation. Begin a dialogue to help them gain a basic understanding that&#8217;s appropriate for their age.</li>
-			 <li> Comfort : Let them know their safety is your top priority.</li>
-			 <li> Be Aware : Changes in routine behaviors, such as sleeping pattern or eating habits, can indicate distress. Seek professional support if they persist.</li>
-			 <li> Expect the unexpected : As children develop, their intellectual, physical and emotional capacities change.</li>
-			 <li> Make time : Help kids understand they are safe and secure by talking, playing and engaging in bonding family activities.</li>
-			 <li> Keep calm and carry on : Your child will learn how to deal with these events from you and will model his or her behavior after yours.</li>
-			 <li> Care : Make a point of showing sensitivity toward other families impacted by the disaster. This is an opportunity to teach your children that we all need to help each other.</li>
-			 <li> Routine : Help your children return to normal activities including school, sports and play groups.</li>
-			 <li> Volunteer : Helping others can give your child a sense of control, security and empathy.
-			 </li>
-		</ul>
+	<div id="youngChildTips" class="info">
+  </div>
 	<div class="info">
       <p>
         <strong>IF (PET): What to do to protect and take care of animals after the hurricane:</strong></p>
@@ -90,32 +62,37 @@
 	  var famNum;
 	  var pets;
 	  var youngChild;
-	  
-	  
+
+
       var signOut = document.getElementById("signOutButton");
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           var text = document.querySelector('h1');
           text.innerHTML = "Logged In " + user.email;
-		  
+
           console.log(user);
-		  
+
 		  var id = user.uid;
 			return firebase.database().ref("users/" + id).once("value").then(function(snapshot) {
 				if (snapshot.val()) {
 					famNum = snapshot.val().famNum;
 					pets = snapshot.val().pets;
 					youngChild = snapshot.val().youngChild;
-					
-					console.log(famNum);
-					console.log(pets);
-					console.log(youngChild);
+
+					console.log("FAM:"+famNum);
+					console.log("PETS:"+pets);
+					console.log("CHILD:"+youngChild);
 
 				}
 			});
         }
       });
+      console.log("ERIK IS GOOD");
+      if(youngChild){
+        console.log("xd");
+        document.getElementById("youngChildTips").src = 'responseChildTips.html';
 
+      }
       signOut.onclick = function() {
         firebase.auth().signOut().then(function() {
           var text = document.querySelector('h1');

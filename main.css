@@ -1,3 +1,85 @@
+body {
+  background: linear-gradient(225deg, #00f6ff, #6b6b6b);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:87% 0%}
+      50%{background-position:14% 100%}
+      100%{background-position:87% 0%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:87% 0%}
+      50%{background-position:14% 100%}
+      100%{background-position:87% 0%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:87% 0%}
+      50%{background-position:14% 100%}
+      100%{background-position:87% 0%}
+  }
+}
+
+#map {
+ height: 700px;
+ width: 100%;
+}
+
+h1 {
+  font-family: impact;
+  font-size: 50px;
+  text-align: center;
+  color: black;
+}
+
+.info {
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204);
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+p {
+  padding-left: 10px;
+  font-size: 25px;
+  padding-top: 8px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+.active {
+    background-color: #4CAF50;
+}
+
+@media only screen and (max-width: 1200px) {
+  #map {
+   height: 800px;
+   width: 100%;
+  }
+}
 div.nav{
 	width: 100%;
 	background-color: rgba(0,0,0,0);
@@ -22,4 +104,3 @@ div.nav ul a{
 #grayLogo{
 	color: #333;
 }
-
