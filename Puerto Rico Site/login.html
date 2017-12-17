@@ -55,7 +55,6 @@
 
 
     //Signs out
-    var signOut = document.getElementById("signOutButton");
 
     loginButton.onclick = function() {
       firebase.auth().signInWithEmailAndPassword(lEmail.value, lPassword.value).catch(function(error) {
@@ -74,7 +73,14 @@
         var s = document.querySelector('h1');
         s.innerHTML = "Logged In " + user.email;
         console.log(user);
-        window.location.replace("index.html");
+        var d = new Date();
+	console.log(d.getTime() - hurricanedate);
+	if(hurricanedate <= d.getTime()){
+	window.location.replace("responsehome.html");
+	}
+	else if(hurricanedate > d.getTime()){
+	window.location.replace("prephome.html");
+	}
       }
     });
 
