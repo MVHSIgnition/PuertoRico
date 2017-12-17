@@ -30,19 +30,11 @@
           </ul>
       <p>
     </div>
-	<div id="youngChildTips" class="info">
-  </div>
-	<div class="info">
-      <p>
-        <strong>IF (PET): What to do to protect and take care of animals after the hurricane:</strong></p>
-		<ul>
-			<li>Download the VetsPlusMore, Paw Boost, and Finding Rover apps which can help find temporary foster homes.</li>
-			<li>The Sato Project which works in the area of Yabucoa works on helping dogs in extreme poverty. (saved over 1,600 dogs since 2011, and can save a lot more with more donations).</li>
-			<li>Do not attempt to reduce a dog’s pain by giving it pain killers of any type. The alternative is to exercise the dog as much as possible.</li>
-			<li>Bring the dog to a local shelter as soon as possible so that the dog has access to food, water, and shelter.</li>
+	<iframe width=95% height="620px" id="youngChildTips" frameBorder="0" class="info">
+  </iframe>
+  <iframe width=95% height="225px" id="pets" frameBorder="0" class="info">
+  </iframe>
 
-		</ul>
-	</div>
 
     <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
     <script>
@@ -83,16 +75,19 @@
 					console.log("PETS:"+pets);
 					console.log("CHILD:"+youngChild);
 
+          if(youngChild){
+            document.getElementById("youngChildTips").src = 'responseChildTips.html';
+
+          }
+          if(pets){
+            document.getElementById("pets").src = 'responsePetTips.html';
+
+          }
 				}
 			});
         }
       });
-      console.log("ERIK IS GOOD");
-      if(youngChild){
-        console.log("xd");
-        document.getElementById("youngChildTips").src = 'responseChildTips.html';
 
-      }
       signOut.onclick = function() {
         firebase.auth().signOut().then(function() {
           var text = document.querySelector('h1');
