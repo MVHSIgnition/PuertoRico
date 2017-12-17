@@ -3,29 +3,51 @@
 		<title>Search Radio Broadcasts</title>
 		<style>
 			.input-wrapper {
-				border: 1px solid #333;
-				display: inline-block;
-				padding: .5em;
+				text-align: center;
 			}
 			
-			.input-wrapper input, button {
-				/*border-bottom: 1px solid #000;
-				border-top: 1px solid #000;
-				border-left: 1px solid #000;*/
-				border-radius: .5em;
-				background-color: transparent;
+			.input-wrapper #q, #qBtn {
+				height: 2em;
+				float:left;
+				border-style: none;
+				border-color: #333;
 			}
 			
-			.input-wrapper button
+			.input-wrapper #q {
+				border-top-left-radius: .5em;
+				border-bottom-left-radius: .5em;
+				border-right: 0;
+				text-indent: .5em;
+			}
 			
+			.input-wrapper #qBtn {
+				background-color: #90C3D4;
+				border-top-right-radius: .5em;
+				border-bottom-right-radius: .5em;
+			}
+			
+			.input-wrapper #qBtn:hover, #qBtn:focus {
+				background-color: #67A3B8;
+				border-top-right-radius: .5em;
+				border-bottom-right-radius: .5em;
+			}
+			
+			.input-wrapper #qBtn img {
+				max-width: 80%;
+				max-height: 80%;
+			}
+			
+			body {
+				background-color: #DDD;
+			}
 			
 		</style>
 	</head>
 	
 	<body>
 		<div class="input-wrapper">
-			<input id="q" />
-			<button>Search</button>
+			<input id="q" placeholder="Ignite!"/>
+			<button id="qBtn"><img src="img/search.png"/></button>
 		</div>
 	</body>
 </html>
