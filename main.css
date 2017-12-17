@@ -1,5 +1,26 @@
 body {
-  background-color: rgb(236, 232, 232);
+  background: linear-gradient(225deg, #00f6ff, #6b6b6b);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 12s ease infinite;
+  -moz-animation: AnimationName 12s ease infinite;
+  animation: AnimationName 12s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:87% 0%}
+      50%{background-position:14% 100%}
+      100%{background-position:87% 0%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:87% 0%}
+      50%{background-position:14% 100%}
+      100%{background-position:87% 0%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:87% 0%}
+      50%{background-position:14% 100%}
+      100%{background-position:87% 0%}
+  }
 }
 
 #map {
